@@ -55,11 +55,11 @@ class TestScooterLogos:
         main_page.click_order_button('top')
         order_page = OrderPage(driver)
         order_page.wait_for_visibility(order_page.NAME_INPUT)
-        assert 'order' in driver.current_url
+        assert 'order' in order_page.get_current_url()
 
         # Клик по логотипу «Самоката» возвращает на главную страницу
         main_page.click_samokat_logo()
-        assert driver.current_url == Urls.MAIN_PAGE
+        assert main_page.get_current_url() == Urls.MAIN_PAGE
 
     @allure.title('Клик по логотипу Яндекса открывает главную страницу Дзена в новом окне')
     def test_click_yandex_logo_opens_dzen_in_new_window(self, driver):
@@ -72,4 +72,4 @@ class TestScooterLogos:
         # Открывается новое окно, куда через редирект попадаем на Дзен
         main_page.switch_to_new_window()
         main_page.wait_for_url_contains(Urls.DZEN_HOST)
-        assert Urls.DZEN_HOST in driver.current_url
+        assert Urls.DZEN_HOST in main_page.get_current_url()
