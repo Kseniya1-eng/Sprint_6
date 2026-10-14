@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+
+# Тесты
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Allure
+allure_results/
+allure-report/
+
+# Allure CLI (скачиваемый инструмент; любая версия ставится отдельно)
+allure-*/
+
+# Виртуальные окружения
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Системные файлы
+.DS_Store
+Thumbs.db
